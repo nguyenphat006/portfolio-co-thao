@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ===== DESIGN SYSTEM - Costiera Pearl Style ===== */
+
+@theme inline {
+  /* === PRIMARY BACKGROUNDS === */
+  --color-brand-50: #FFF1F2;      /* Rose Water - Nền chính */
+  --color-brand-100: #FFE4E6;
+  --color-brand-200: #FECDD3;     /* Soft Pink - Secondary/Border */
+  --color-brand-300: #E1B0B9;     /* Dusty Rose - Nền điểm nhấn */
+  --color-brand-500: #BE185D;     /* Elegant Rose - Primary Action */
+  --color-brand-900: #881337;
+  
+  /* === TEXT COLORS === */
+  --color-navy-900: #1E293B;      /* Navy Charcoal - Tiêu đề */
+  --color-slate-600: #475569;     /* Slate Gray - Nội dung */
+  
+  /* === BACKGROUND === */
+  --color-background: #FFF1F2;
+  --color-foreground: #1E293B;
+  
+  /* === FONTS === */
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: var(--font-dancing), cursive;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  background: var(--color-brand-50);
+  color: var(--color-navy-900);
+  font-family: var(--font-sans);
+}
+
+/* ===== CUSTOM UTILITIES ===== */
+@layer utilities {
+  /* Polaroid Effect */
+  .polaroid {
+    @apply p-2 bg-white shadow-md rounded-sm;
+  }
+  
+  /* Elegant Text Shadow */
+  .text-shadow-soft {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Padding */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===== INFINITE SCROLL SLIDER ===== */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 30s linear infinite;
+}
+
+/* Pause on hover */
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Slider mask - fade edges */
+.slider-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* ===== CSS-ONLY ANIMATIONS FOR PERFORMANCE ===== */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
