@@ -55,7 +55,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     id: 5,
     src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=870&auto=format&fit=crop",
     alt: "Sự kiện MC",
-    colSpan: "md:col-span-1",
+    colSpan: "md:col-span-2",
     rowSpan: "md:row-span-1",
     aspectRatio: "aspect-square",
   },
@@ -66,13 +66,5 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     colSpan: "md:col-span-1",
     rowSpan: "md:row-span-1",
     aspectRatio: "aspect-square",
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=869&auto=format&fit=crop",
-    alt: "Hội thảo",
-    colSpan: "md:col-span-2",
-    rowSpan: "md:row-span-1",
-    aspectRatio: "aspect-[2/1]",
-  },
+  }
 ];

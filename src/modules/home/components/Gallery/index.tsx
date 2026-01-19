@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { GALLERY_LEFT, GALLERY_RIGHT, SECTION_CONTENT } from "./constants";
+import { GALLERY_IMAGES, SECTION_CONTENT } from "./constants";
 
 // Animation variants
 const containerVariants = {
@@ -47,53 +47,34 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        {/* Organic Bento Grid - 2 Column Layout */}
+        {/* Organic Bento Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-auto"
         >
-          {/* LEFT COLUMN - 1/3 width */}
-          <div className="md:col-span-1 flex flex-col gap-3 md:gap-4">
-            {GALLERY_LEFT.map((image) => (
-              <motion.div
-                key={image.id}
-                variants={itemVariants}
-                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl ${image.className}`}
-              >
+          {GALLERY_IMAGES.map((image) => (
+            <motion.div
+              key={image.id}
+              variants={itemVariants}
+              className={`group relative overflow-hidden rounded-2xl md:rounded-3xl ${image.colSpan} ${image.rowSpan}`}
+            >
+              <div className={`relative w-full h-full ${image.aspectRatio}`}>
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-colors duration-300" />
-              </motion.div>
-            ))}
-          </div>
 
-          {/* RIGHT COLUMNS - 2/3 width with sub-grid */}
-          <div className="md:col-span-2 grid grid-cols-2 gap-3 md:gap-4 auto-rows-auto">
-            {GALLERY_RIGHT.map((image) => (
-              <motion.div
-                key={image.id}
-                variants={itemVariants}
-                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl ${image.className}`}
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 66vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
+                {/* Subtle overlay on hover */}
                 <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/20 transition-colors duration-300" />
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
