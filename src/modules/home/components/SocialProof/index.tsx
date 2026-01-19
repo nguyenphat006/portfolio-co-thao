@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Quote } from "lucide-react";
+import { ImQuotesRight } from 'react-icons/im'
 import { FEATURED_QUOTE, MEDIA_PARTNERS } from "./constants";
 
 export function SocialProof() {
@@ -13,7 +13,7 @@ export function SocialProof() {
       <div className="container-custom">
         {/* Quote */}
         <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in-up">
-          <Quote className="w-10 h-10 text-brand-200 mx-auto mb-6 rotate-180" />
+          <ImQuotesRight className="w-12 h-12 text-brand-200 mx-auto mb-6 rotate-180" />
           <blockquote className="font-serif text-xl md:text-2xl text-navy-900 italic leading-relaxed mb-4">
             &ldquo;{FEATURED_QUOTE.text}&rdquo;
           </blockquote>

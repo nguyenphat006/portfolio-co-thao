@@ -2,43 +2,42 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Facebook, Instagram, Youtube, Linkedin, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, Heart } from "lucide-react";
 import { SITE_CONFIG, SOCIAL_LINKS, NAV_LINKS } from "@/lib/constants";
 
 const socialIcons = [
   { icon: Facebook, href: SOCIAL_LINKS.facebook, label: "Facebook" },
   { icon: Instagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
   { icon: Youtube, href: SOCIAL_LINKS.youtube, label: "YouTube" },
-  { icon: Linkedin, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 text-white">
+    <footer className="bg-brand-50">
       {/* Newsletter Section */}
-      <div className="border-b border-white/10">
-        <div className="container-custom py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="font-handwriting text-3xl md:text-4xl text-brand-200 mb-3">
+      <div className="border-y border-brand-100">
+        <div className="container-custom py-12 md:py-16">
+          <div className="max-w-xl mx-auto text-center">
+            <h3 className="font-handwriting text-2xl md:text-3xl text-brand-500 mb-2">
               Đừng bỏ lỡ!
             </h3>
-            <h4 className="font-serif text-2xl md:text-3xl uppercase tracking-wide mb-4">
+            <h4 className="font-serif text-xl md:text-2xl text-navy-900 uppercase tracking-wide mb-3">
               Đăng ký nhận tin
             </h4>
-            <p className="text-white/70 mb-8">
-              Nhận thông tin về các khóa học mới, sự kiện và những chia sẻ độc quyền từ tôi.
+            <p className="text-slate-500 text-sm mb-6">
+              Nhận thông tin về các khóa học mới và chia sẻ độc quyền.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Email của bạn..."
-                className="flex-1 px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-brand-500 focus:bg-white/15 transition-all"
+                className="flex-1 px-5 py-3 rounded-full bg-white border border-brand-100 text-navy-900 placeholder:text-slate-400 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all text-sm"
               />
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="px-8 py-3 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-900 transition-colors shadow-lg shadow-brand-500/25"
+                className="px-6 py-3 bg-brand-500 text-white rounded-full font-medium hover:bg-brand-600 transition-colors text-sm"
               >
                 Đăng ký
               </motion.button>
@@ -47,114 +46,60 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Main Footer */}
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="font-serif text-2xl font-bold text-white">
+      {/* Simple Footer */}
+      <div className="container-custom py-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand & Social */}
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Link href="/" className="font-serif text-xl font-bold text-navy-900 italic">
               {SITE_CONFIG.name}
             </Link>
-            <p className="mt-4 text-white/70 text-sm leading-relaxed">
-              {SITE_CONFIG.description}
-            </p>
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-2">
               {socialIcons.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-brand-500 hover:text-white transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-brand-100 text-slate-500 hover:bg-brand-500 hover:text-white hover:border-brand-500 transition-colors"
                   aria-label={label}
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h5 className="font-serif text-lg font-semibold mb-4 uppercase tracking-wide">
-              Điều hướng
-            </h5>
-            <ul className="space-y-3">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-brand-200 transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links - inline */}
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-slate-500 hover:text-brand-500 transition-colors text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-          {/* Services */}
-          <div>
-            <h5 className="font-serif text-lg font-semibold mb-4 uppercase tracking-wide">
-              Dịch vụ
-            </h5>
-            <ul className="space-y-3 text-sm text-white/70">
-              <li>
-                <Link href="/courses" className="hover:text-brand-200 transition-colors">
-                  Khóa học Online
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses" className="hover:text-brand-200 transition-colors">
-                  Workshop Offline
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-brand-200 transition-colors">
-                  Tư vấn 1-1
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-brand-200 transition-colors">
-                  Hợp tác Doanh nghiệp
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h5 className="font-serif text-lg font-semibold mb-4 uppercase tracking-wide">
-              Liên hệ
-            </h5>
-            <ul className="space-y-3 text-sm text-white/70">
-              <li className="flex items-center gap-3">
-                <Mail size={16} className="text-brand-200" />
-                <a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-brand-200 transition-colors">
-                  {SITE_CONFIG.email}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={16} className="text-brand-200" />
-                <a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-brand-200 transition-colors">
-                  {SITE_CONFIG.phone}
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-brand-200 mt-0.5" />
-                <span>Hồ Chí Minh, Việt Nam</span>
-              </li>
-            </ul>
-          </div>
+          {/* Contact */}
+          <a
+            href={`mailto:${SITE_CONFIG.email}`}
+            className="flex items-center gap-2 text-slate-500 hover:text-brand-500 transition-colors text-sm"
+          >
+            <Mail size={14} />
+            {SITE_CONFIG.email}
+          </a>
         </div>
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/10">
-        <div className="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/50">
+      <div className="border-t border-brand-100">
+        <div className="container-custom py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Made with <Heart size={14} className="text-brand-500 fill-brand-500" /> in Vietnam
+            Made with <Heart size={12} className="text-brand-500 fill-brand-500" /> in Vietnam
           </p>
         </div>
       </div>
