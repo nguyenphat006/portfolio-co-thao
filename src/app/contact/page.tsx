@@ -25,10 +25,13 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main>
-        <ContactPage />
-      </main>
-      <Footer />
+      {/* Main content wrapper: pt-16 for mobile top bar, md:pt-0 md:ml-20 for desktop sidebar */}
+      <div className="pt-16 md:pt-0 md:ml-20">
+        <main>
+          <ContactPage />
+        </main>
+        {/* <Footer /> */}
+      </div>
     </>
   );
 }

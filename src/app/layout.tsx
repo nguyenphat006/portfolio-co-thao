@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Dancing_Script } from "next/font/google";
+import { LenisProvider } from "@/components/shared";
 import "./globals.css";
 
 const playfair = Playfair_Display({ 
@@ -21,7 +22,7 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Thảo Nguyễn | Personal Branding Coach",
+  title: "Phương Thảo | Personal Branding Coach",
   description: "Elegant personal branding portfolio - Helping you discover and express your unique identity.",
   keywords: ["personal branding", "coaching", "courses", "lifestyle"],
 };
@@ -36,7 +37,9 @@ export default function RootLayout({
       <body 
         className={`${playfair.variable} ${inter.variable} ${dancing.variable} font-sans antialiased`}
       >
-        {children}
+        <LenisProvider>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

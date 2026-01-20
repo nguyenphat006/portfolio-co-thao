@@ -1,9 +1,15 @@
 import dynamic from "next/dynamic";
 import { Header, Footer } from "@/components/shared";
+import type { Metadata } from "next";
 
-// Lazy load HomePage module for better performance
-const HomePage = dynamic(
-  () => import("@/modules/home").then((mod) => ({ default: mod.HomePage })),
+export const metadata: Metadata = {
+  title: "Khóa học | Phương Thảo - MC & Giảng viên",
+  description: "Các khóa học MC, thuyết trình và personal branding từ Phương Thảo - Hoa khôi VMU 2014, MC chuyên nghiệp.",
+};
+
+// Lazy load CoursesPage module
+const CoursesPage = dynamic(
+  () => import("@/modules/courses").then((mod) => ({ default: mod.CoursesPage })),
   {
     loading: () => (
       <div className="min-h-screen flex items-center justify-center bg-brand-50">
@@ -22,7 +28,7 @@ export default function Page() {
       {/* Main content wrapper: pt-16 for mobile top bar, md:pt-0 md:ml-20 for desktop sidebar */}
       <div className="pt-16 md:pt-0 md:ml-20">
         <main>
-          <HomePage />
+          <CoursesPage />
         </main>
         {/* <Footer /> */}
       </div>

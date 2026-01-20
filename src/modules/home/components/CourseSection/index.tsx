@@ -78,7 +78,7 @@ export function CourseSection() {
             >
               {/* Image with organic shape */}
               <Link href={`/courses/${course.id}`} className="block mb-5">
-                <div className="relative aspect-square overflow-hidden rounded-3xl bg-brand-100">
+                <div className="relative aspect-square overflow-hidden rounded-2xl bg-brand-100">
                   <Image
                     src={course.image}
                     alt={course.title}

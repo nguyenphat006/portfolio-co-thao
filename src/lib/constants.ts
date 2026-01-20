@@ -81,7 +81,6 @@ export const NAV_LINKS = [
   { label: "Trang chủ", href: "/" },
   { label: "Về tôi", href: "/about" },
   { label: "Khóa học", href: "/courses" },
-  { label: "Thư viện", href: "/gallery" },
   { label: "Liên hệ", href: "/contact" },
 ] as const;
 
