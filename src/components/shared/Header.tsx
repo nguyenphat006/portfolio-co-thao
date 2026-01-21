@@ -11,8 +11,8 @@ const SOCIAL_ICONS = [
   { icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: "Facebook" },
   { icon: FaInstagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
   { icon: FaYoutube, href: SOCIAL_LINKS.youtube, label: "YouTube" },
-  { icon: FaTiktok, href: SOCIAL_LINKS.tiktok, label: "TikTok" },
-  { icon: FaLinkedinIn, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
+  // { icon: FaTiktok, href: SOCIAL_LINKS.tiktok, label: "TikTok" },
+  // { icon: FaLinkedinIn, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
 ];
 
 // Optimized animation variants - defined outside component to prevent recreation

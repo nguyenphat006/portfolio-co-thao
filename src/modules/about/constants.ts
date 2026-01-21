@@ -3,7 +3,7 @@
 
 export const HERO_CONTENT = {
   greeting: "Xin chào, tôi là",
-  name: "Phương Thảo",
+  name: "Hoàng Thị Phương Thảo",
   tagline: "Từ vương miện Hoa khôi đến giảng đường đại học",
   description: "Hành trình của tôi là minh chứng cho việc vẻ đẹp đích thực đến từ trí tuệ, sự nỗ lực không ngừng và khát vọng cống hiến cho xã hội.",
   image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop",

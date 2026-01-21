@@ -4,10 +4,10 @@
 export const SITE_CONFIG = {
   name: "Phương Thảo",
   fullName: "Hoàng Thị Phương Thảo",
-  title: "MC • Giảng viên • Hoa khôi VMU 2014",
+  title: "BTV • MC Truyền hình • Ths.Giảng viên",
   description: "Từ Hoa khôi Nữ sinh viên Việt Nam đến Giảng viên Đại học - Hành trình truyền cảm hứng và lan tỏa vẻ đẹp trí tuệ",
-  email: "contact@phuongthao.com",
-  phone: "+84 xxx xxx xxx",
+  email: "btvhoangphuongthao@gmail.com",
+  phone: "0972263439 (Ms.Linh)",
   // Thông tin cơ bản
   birthYear: 1994,
   height: "1m68",
@@ -69,9 +69,9 @@ export const ACHIEVEMENTS = [
 
 // ===== SOCIAL LINKS =====
 export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/",
-  instagram: "https://instagram.com/",
-  youtube: "https://www.youtube.com/watch?v=Q9W4KcV6yrs",
+  facebook: "https://www.facebook.com/thao.hoang.547389",
+  instagram: "https://instagram.com/hoangthi_phuongthaoo",
+  youtube: "https://www.youtube.com/channel/UCFp2gRlAN-MtNMGkVf90VIg?themeRefresh=1",
   tiktok: "https://tiktok.com/",
   linkedin: "https://linkedin.com/",
 } as const;

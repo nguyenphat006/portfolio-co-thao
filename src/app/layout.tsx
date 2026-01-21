@@ -22,7 +22,7 @@ const dancing = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Phương Thảo | Personal Branding Coach",
+  title: "Hoàng Thị Phương Thảo | Personal Branding Coach",
   description: "Elegant personal branding portfolio - Helping you discover and express your unique identity.",
   keywords: ["personal branding", "coaching", "courses", "lifestyle"],
 };

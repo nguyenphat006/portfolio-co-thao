@@ -3,7 +3,7 @@ import { Header, Footer } from "@/components/shared";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Liên hệ | Phương Thảo",
+  title: "Liên hệ | Hoàng Thị Phương Thảo",
   description: "Liên hệ với Phương Thảo - Hoa khôi VMU 2014, MC, Giảng viên",
 };
 
@@ -30,7 +30,7 @@ export default function Page() {
         <main>
           <ContactPage />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

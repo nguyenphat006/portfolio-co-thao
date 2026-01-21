@@ -24,7 +24,7 @@ export default function Page() {
         <main>
           <HomePage />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
