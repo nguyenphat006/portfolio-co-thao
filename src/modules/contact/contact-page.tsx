@@ -96,7 +96,7 @@ export function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10"
           >
             {contactInfo.map((item) => {
               const Icon = item.icon;
@@ -105,14 +105,14 @@ export function ContactPage() {
                 <Wrapper
                   key={item.label}
                   {...(item.href ? { href: item.href } : {})}
-                  className="flex items-center gap-3 p-4 bg-white rounded-xl border border-brand-100 hover:border-brand-200 hover:shadow-sm transition-all"
+                  className="flex items-center gap-3 p-4 bg-white rounded-xl border border-brand-100 hover:border-brand-200 hover:shadow-sm transition-all min-w-0"
                 >
-                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-brand-500" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-slate-400">{item.label}</p>
-                    <p className="text-sm font-medium text-navy-900">{item.value}</p>
+                    <p className="text-sm font-medium text-navy-900 break-all">{item.value}</p>
                   </div>
                 </Wrapper>
               );
