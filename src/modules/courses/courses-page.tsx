@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight } from "lucide-react";
-import { PAGE_CONTENT, COURSES_DATA, CourseItem } from "./constants";
+import { COURSES_DATA, CourseItem } from "@/modules/courses/constants";
 
 // Animation variants
 const containerVariants = {
@@ -33,48 +33,48 @@ function CourseCard({ course }: { course: CourseItem }) {
   };
 
   return (
-    <motion.article
-      variants={itemVariants}
-      className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
-    >
-      {/* Image */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={course.image}
-          alt={course.title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        {/* Level Badge */}
-        <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium ${levelColors[course.level]}`}>
-          {course.level}
-        </span>
-      </div>
+    <Link href={`/courses/${course.slug}`}>
+      <motion.article
+        variants={itemVariants}
+        className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300"
+      >
+        {/* Image */}
+        <div className="relative aspect-16/10 overflow-hidden">
+          <Image
+            src={course.image}
+            alt={course.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+          {/* Level Badge */}
+          <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-medium ${levelColors[course.level]}`}>
+            {course.level}
+          </span>
+        </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="font-serif text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-500 transition-colors">
-          {course.title}
-        </h3>
-        <p className="text-slate-500 text-sm mb-4 line-clamp-2">
-          {course.description}
-        </p>
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="font-serif text-xl font-bold text-navy-900 mb-2 group-hover:text-brand-500 transition-colors">
+            {course.title}
+          </h3>
+          <p className="text-slate-500 text-sm mb-4 line-clamp-2">
+            {course.description}
+          </p>
 
-        {/* Meta */}
-        <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-          <div className="flex items-center gap-2 text-slate-400 text-sm">
-            <Clock size={16} />
-            <span>{course.duration}</span>
-          </div>
-          {course.price && (
+          {/* Meta */}
+          <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+            <div className="flex items-center gap-2 text-slate-400 text-sm">
+              <Clock size={16} />
+              <span>{course.schedule.sessions}</span>
+            </div>
             <span className="text-brand-500 font-semibold text-sm">
               {course.price}
             </span>
-          )}
+          </div>
         </div>
-      </div>
-    </motion.article>
+      </motion.article>
+    </Link>
   );
 }
 
@@ -91,13 +91,13 @@ export function CoursesPage() {
             className="max-w-2xl"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 mb-4">
-              {PAGE_CONTENT.title}
+              Khóa học
             </h1>
             <p className="font-handwriting text-2xl md:text-3xl text-brand-500 mb-4">
-              {PAGE_CONTENT.subtitle}
+              Nâng tầm bản thân với nghệ thuật thuyết trình & MC
             </p>
             <p className="text-slate-500 text-lg">
-              {PAGE_CONTENT.description}
+              Các chương trình đào tạo được thiết kế dựa trên kinh nghiệm thực tế từ MC chuyên nghiệp và giảng viên đại học.
             </p>
           </motion.div>
         </div>
@@ -110,7 +110,7 @@ export function CoursesPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
             {COURSES_DATA.map((course) => (
               <CourseCard key={course.id} course={course} />

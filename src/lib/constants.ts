@@ -91,3 +91,33 @@ export const MEDIA_PARTNERS = [
   { name: "Today TV", logo: "/partners/todaytv.png" },
   { name: "FPT Polytechnic", logo: "/partners/fpt.png" },
 ] as const;
+
+// ===== INSTRUCTOR INFO (Shared) =====
+export const INSTRUCTOR_INFO = {
+  name: "Hoàng Thị Phương Thảo",
+  title: "Thạc sĩ - MC - BTV - Giảng viên",
+  credentials: [
+    "Top 10 người dẫn chương trình truyền hình TPHCM",
+    "Biên tập viên, MC đài truyền hình VTV9, HTV7, Today TV",
+    "Giảng viên đào tạo MC của Nhà Văn hóa Thanh niên TPHCM",
+    "Giảng viên môn truyền thông báo chí, PR, Event, Kỹ năng dẫn chương trình",
+    "Hơn 13 năm kinh nghiệm trong lĩnh vực truyền thanh, truyền hình, sự kiện",
+    "MC nhiều sự kiện ngoại giao cấp cao của TPHCM và cả nước",
+  ],
+} as const;
+
+// ===== REGISTRATION INFO (Shared) =====
+export const REGISTRATION_INFO = {
+  bankName: "VP Bank - Chi Nhánh Quận 2",
+  accountName: "Hoàng Thị Phương Thảo",
+  accountNumber: "197199999999",
+  contact: {
+    phone: "0972263439",
+    name: "Ms Linh",
+    zalo: true,
+  },
+} as const;
+
+
+
+
