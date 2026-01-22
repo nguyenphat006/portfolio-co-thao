@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_CONFIG } from "@/lib/constants";
 import { COURSES_DATA } from "@/modules/courses/constants"
-import { CourseDetailPage } from "@/modules/courses/course-detail-page";
+import { CourseDetailPage } from "@/modules/courses/details/course-detail-page";
 import { Footer, Header } from "@/components/shared";
 
 interface PageProps {

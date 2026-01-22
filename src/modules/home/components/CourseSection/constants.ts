@@ -3,7 +3,7 @@
 
 export const SECTION_CONTENT = {
   label: "Khóa học nổi bật",
-  title: "Train Your Voice",
-  subtitle: "Change Your Life",
+  title: "Hành trình khám phá bản thân",
+  subtitle: "cùng nghệ thuật thuyết trình",
   ctaText: "Xem chi tiết & Đăng ký",
 } as const;
