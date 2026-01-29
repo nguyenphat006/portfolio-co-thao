@@ -74,6 +74,7 @@ export const SOCIAL_LINKS = {
   youtube: "https://www.youtube.com/channel/UCFp2gRlAN-MtNMGkVf90VIg?themeRefresh=1",
   tiktok: "https://tiktok.com/",
   linkedin: "https://linkedin.com/",
+  zalo: "https://zalo.me/0972263439",
 } as const;
 
 // ===== NAVIGATION =====

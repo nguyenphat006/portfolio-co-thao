@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTiktok, FaLinkedinIn } from "react-icons/fa";
 import { NAV_LINKS, SOCIAL_LINKS, SITE_CONFIG } from "@/lib/constants";
-
+import { SiZalo } from "react-icons/si"
 const SOCIAL_ICONS = [
   { icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: "Facebook" },
   { icon: FaInstagram, href: SOCIAL_LINKS.instagram, label: "Instagram" },
   { icon: FaYoutube, href: SOCIAL_LINKS.youtube, label: "YouTube" },
-  // { icon: FaTiktok, href: SOCIAL_LINKS.tiktok, label: "TikTok" },
+  { icon: SiZalo, href: SOCIAL_LINKS.zalo, label: "Zalo" },
   // { icon: FaLinkedinIn, href: SOCIAL_LINKS.linkedin, label: "LinkedIn" },
 ];
 
