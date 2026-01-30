@@ -18,9 +18,9 @@ Hiện tại, tôi là Biên tập viên tại VTV9 với chương trình "Toàn
   signature: "Phương Thảo",
   images: [
     // Professional portrait photos
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=687&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=870&auto=format&fit=crop",
+    "/about/IMG_9107.JPG",
+    "/about/IMG_5265.JPG",
+    "/about/IMG_2543.JPG",
   ],
 } as const;
 

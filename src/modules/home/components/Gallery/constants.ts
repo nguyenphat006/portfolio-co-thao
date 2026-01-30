@@ -5,59 +5,109 @@ export interface GalleryImage {
   id: number;
   src: string;
   alt: string;
-  gridClass: string; // Combined grid positioning class
+  type?: 'image' | 'video'; // Type of media
 }
 
 export const SECTION_CONTENT = {
   subtitle: "Khoảnh khắc",
-  title: "Thư viện ảnh",
+  title: "Thư viện ảnh & video",
   description: "Hành trình từ sân khấu Hoa khôi đến giảng đường đại học",
 } as const;
 
-// Seamless bento grid layout
-// Mobile: 4 rows x 12 cols (200px each row)
-// Desktop: 2 rows x 12 cols (250px each row)
+// Grid pattern that repeats every 10 items
+// Mobile: 5 rows x 12 cols (200px each row)
+// Desktop: 3 rows x 12 cols (250px each row)
+export const GRID_PATTERNS = [
+  "col-span-6 row-span-2 md:col-span-3 md:row-span-2", // 0: Large vertical
+  "col-span-6 row-span-1 md:col-span-6 md:row-span-1", // 1: Wide horizontal
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 2: Medium square
+  "col-span-12 row-span-1 md:col-span-6 md:row-span-2", // 3: Large horizontal (good for video)
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 4: Medium square
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 5: Medium square
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 6: Medium square
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 7: Medium square
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 8: Medium square
+  "col-span-6 row-span-1 md:col-span-3 md:row-span-1", // 9: Medium square
+];
+
+// Gallery items - gridClass will be auto-assigned based on index
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1032&auto=format&fit=crop",
-    alt: "Khoảnh khắc bên học viên",
-    // Mobile: row 1-2, col 1-6 | Desktop: row 1-2, col 1-3
-    gridClass: "col-span-6 row-span-2 md:col-span-3 md:row-span-2",
+    src: "/about/Hoa_Khoi_2014.jpg",
+    alt: "Hoa khôi 2014",
+    type: 'image',
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=870&auto=format&fit=crop",
-    alt: "Thiên nhiên Việt Nam",
-    // Mobile: row 1, col 7-12 | Desktop: row 1, col 4-9
-    gridClass: "col-span-6 row-span-1 md:col-span-6 md:row-span-1",
+    src: "/about/IMG_4550.PNG",
+    alt: "Khoảnh khắc sự kiện",
+    type: 'image',
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=871&auto=format&fit=crop",
+    src: "/about/IMG_2543.JPG",
     alt: "Workshop đào tạo",
-    // Mobile: row 2, col 7-12 | Desktop: row 1, col 10-12
-    gridClass: "col-span-6 row-span-1 md:col-span-3 md:row-span-1",
+    type: 'image',
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop",
-    alt: "Portrait",
-    // Mobile: row 3, col 1-6 | Desktop: row 2, col 4-6
-    gridClass: "col-span-6 row-span-1 md:col-span-3 md:row-span-1",
+    src: "/video/Video_2.mp4",
+    alt: "Video hoạt động",
+    type: 'video',
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=870&auto=format&fit=crop",
+    src: "/about/IMG_5265.JPG",
     alt: "Sự kiện MC",
-    // Mobile: row 3, col 7-12 | Desktop: row 2, col 7-9
-    gridClass: "col-span-6 row-span-1 md:col-span-3 md:row-span-1",
+    type: 'image',
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=870&auto=format&fit=crop",
+    src: "/about/IMG_6771.JPG",
     alt: "Lớp học",
-    // Mobile: row 4, col 1-12 | Desktop: row 2, col 10-12
-    gridClass: "col-span-12 row-span-1 md:col-span-3 md:row-span-1",
+    type: 'image',
+  },
+  {
+    id: 7,
+    src: "/about/IMG_3989.JPG",
+    alt: "Buổi đào tạo",
+    type: 'image',
+  },
+  {
+    id: 8,
+    src: "/about/IMG_5321.JPG",
+    alt: "Hoạt động giảng dạy",
+    type: 'image',
+  },
+  {
+    id: 9,
+    src: "/about/IMG_8919.JPG",
+    alt: "Sự kiện đặc biệt",
+    type: 'image',
+  },
+  {
+    id: 10,
+    src: "/about/IMG_6847.JPG",
+    alt: "Kỷ niệm đáng nhớ",
+    type: 'image',
+  },
+  {
+    id: 11,
+    src: "/video/Video_3.mp4",
+    alt: "MC Đài truyền hình",
+    type: 'video',
+  },
+  {
+    id: 12,
+    src: "/about/IMG_6848.JPG",
+    alt: "Buổi giao lưu",
+    type: 'image',
+  },
+    {
+    id: 13,
+    src: "/about/IMG_8977.JPG",
+    alt: "Buổi giao lưu",
+    type: 'image',
   },
 ];

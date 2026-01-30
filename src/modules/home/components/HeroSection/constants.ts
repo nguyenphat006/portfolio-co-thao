@@ -10,7 +10,7 @@ export const HERO_CONTENT = {
   ctaPrimary: "Xem khóa học",
   ctaSecondary: "Về tôi",
   // Ảnh Hoa khôi Phương Thảo
-  image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop",
+  image: "/about/IMG_2546.JPG",
   stats: [
     { value: "10+", label: "Năm kinh nghiệm" },
     { value: "1700+", label: "Thí sinh vượt qua" },

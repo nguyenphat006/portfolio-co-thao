@@ -6,7 +6,7 @@ export const HERO_CONTENT = {
   name: "Hoàng Thị Phương Thảo",
   tagline: "Từ vương miện Hoa khôi đến giảng đường đại học",
   description: "Hành trình của tôi là minh chứng cho việc vẻ đẹp đích thực đến từ trí tuệ, sự nỗ lực không ngừng và khát vọng cống hiến cho xã hội.",
-  image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=688&auto=format&fit=crop",
+  image: "/about/IMG_2544.JPG",
 } as const;
 
 export const STATS = [
@@ -32,7 +32,7 @@ Giải thưởng không chỉ là vương miện trị giá 800 triệu đồng,
       "Giải thưởng 200 triệu đồng tiền mặt",
       "Top thí sinh hùng biện tiếng Anh ấn tượng nhất",
     ],
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=870&auto=format&fit=crop",
+    image: "/about/IMG_8049.WEBP",
     color: "brand-500",
   },
   {
@@ -50,7 +50,7 @@ Song song với sự nghiệp MC, tôi đảm nhiệm vị trí Phó Tổng Giá
       "Phó Tổng Giám đốc Vietnews Media",
       "Chung kết Hoa hậu Việt Nam 2016",
     ],
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=870&auto=format&fit=crop",
+    image: "/about/IMG_3990.JPG",
     color: "navy-900",
   },
   {
@@ -68,7 +68,7 @@ Hiện tại, tôi đang giảng dạy tại FPT Polytechnic và trường Trung
       "Giảng viên trường Trung cấp Việt Giao",
       "Đại sứ Áo dài Việt Nam",
     ],
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=870&auto=format&fit=crop",
+    image: "/about/IMG_2546.JPG",
     color: "brand-300",
   },
 ] as const;
