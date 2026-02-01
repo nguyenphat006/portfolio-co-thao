@@ -14,7 +14,7 @@ export const ABOUT_CONTENT = {
   title: "Câu chuyện của tôi",
   description: `Tôi là Phương Thảo - Hoa khôi Nữ sinh viên Việt Nam duyên dáng 2014, cựu sinh viên Đại học Sư phạm TP.HCM. Từ việc vượt qua hơn 1.700 thí sinh để đăng quang ngôi vị cao nhất, tôi đã biến ước mơ trở thành giảng viên đại học thành hiện thực.
 
-Hiện tại, tôi là Biên tập viên tại VTV9 với chương trình "Toàn cảnh 24h", đồng thời là Giảng viên tại FPT Polytechnic và trường Trung cấp Việt Giao. Với tấm bằng Thạc sĩ Quản lý Giáo dục từ ĐHQG TP.HCM, tôi tin rằng vẻ đẹp đích thực đến từ trí tuệ và sự tự tin.`,
+Hiện tại, tôi là Biên tập viên tại VTV9 với chương trình "Toàn cảnh 24h", Giảng viên Truyền thông tại Đại học Văn hóa TP.HCM, Giảng viên tại FPT Polytechnic và trường Trung cấp Việt Giao. Với tấm bằng Thạc sĩ Quản lý Giáo dục từ ĐHQG TP.HCM, tôi tin rằng vẻ đẹp đích thực đến từ trí tuệ và sự tự tin.`,
   signature: "Phương Thảo",
   images: [
     // Professional portrait photos
